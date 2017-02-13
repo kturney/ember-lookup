@@ -1,18 +1,44 @@
 # ember-lookup
 
-This README outlines the details of collaborating on this Ember addon.
+This provides a helper that allows using `Ember.getOwner()#lookup from templates`.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd ember-lookup`
-* `npm install`
-* `bower install`
+```sh
+ember install ember-lookup
+```
 
-## Running
+## Usage
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+### Lookup a service
+By default, `ember-lookup` will lookup a service.
+```hbs
+{{#with (lookup 'my-service') as |myService|}}
+  {{! use service }}
+{{/with}}
+```
+
+### Lookup anything registered with ember
+The type of the object to lookup may be provided as the second parameter.
+```hbs
+{{#with (lookup 'environment' 'config') as |config|}}
+  {{! use config }}
+{{/with}}
+```
+
+```hbs
+{{#with (lookup 'foo' 'bar') as |foo|}}
+  {{! use foo of type bar }}
+{{/with}}
+```
+
+### If using [ember-let](https://github.com/thefrontside/ember-let)
+```hbs
+{{let myService=(lookup 'my-service')}}
+```
+
+## Credit where credit is due
+Basically copied from [this issue](https://github.com/rtablada/ember-with-service/issues/2) by [rwjblue](https://github.com/rwjblue) in [ember-with-service](https://github.com/rtablada/ember-with-service).
 
 ## Running Tests
 
