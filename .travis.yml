@@ -25,7 +25,7 @@ matrix:
     - env: EMBER_TRY_SCENARIO=ember-canary
 
 before_install:
-  - yarn global add phantomjs-prebuilt
+  - npm i -g phantomjs-prebuilt
   - phantomjs --version
 
 install:
