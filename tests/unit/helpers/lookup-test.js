@@ -41,5 +41,21 @@ describe('Unit | Helper | lookup', function() {
   it('should assert that the requested item exists', function() {
     expect(() => this.subject().compute([ 'bar', 'foo' ])).to.throw(`"foo:bar" does not exist`);
   });
+
+  it('should pass through lookup options', function() {
+    this.register('service:hello', Service.extend({
+      isHello: true
+    }));
+
+    const singleton1 = this.subject().compute([ 'hello' ], { singleton: true });
+    const singleton2 = this.subject().compute([ 'hello' ], { singleton: true });
+
+    expect(singleton1, 'singleton1').to.equal(singleton2, 'singleton2');
+
+    const nonsingleton1= this.subject().compute([ 'hello' ], { singleton: false });
+    const nonsingleton2= this.subject().compute([ 'hello' ], { singleton: false });
+
+    expect(nonsingleton1, 'nonsingleton1').to.not.equal(nonsingleton2, 'nonsingleton2');
+  });
 });
 

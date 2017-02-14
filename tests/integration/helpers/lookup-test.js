@@ -20,5 +20,9 @@ describe('Integration | Helper | lookup', function() {
 
     expect(() => this.render(hbs`{{lookup 'hello'}}`)).to.not.throw();
   });
+
+  it('should be able to lookup configs', function() {
+    this.render(hbs`{{lookup 'environment' 'config'}}`);
+  });
 });
 
