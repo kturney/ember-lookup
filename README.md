@@ -1,11 +1,14 @@
 # ember-lookup
 [![Latest NPM release][npm-badge]][npm-badge-url]
 [![TravisCI Build Status][travis-badge]][travis-badge-url]
+[![Ember Observer Score][ember-observer-badge]][ember-observer-url]
 
 [npm-badge]: https://img.shields.io/npm/v/ember-lookup.svg
 [npm-badge-url]: https://www.npmjs.com/package/ember-lookup
 [travis-badge]: https://img.shields.io/travis/kturney/ember-lookup/master.svg
 [travis-badge-url]: https://travis-ci.org/kturney/ember-lookup
+[ember-observer-badge]: http://emberobserver.com/badges/ember-lookup.svg
+[ember-observer-url]: http://emberobserver.com/addons/ember-lookup
 
 This provides a helper that allows using `Ember.getOwner()#lookup from templates`.
 
