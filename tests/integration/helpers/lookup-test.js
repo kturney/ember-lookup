@@ -2,11 +2,7 @@ import { expect } from 'chai';
 import { describe, it } from 'mocha';
 import { setupComponentTest } from 'ember-mocha';
 import hbs from 'htmlbars-inline-precompile';
-import Ember from 'ember';
-
-const {
-  Service
-} = Ember;
+import Service from '@ember/service';
 
 describe('Integration | Helper | lookup', function() {
   setupComponentTest('lookup', {

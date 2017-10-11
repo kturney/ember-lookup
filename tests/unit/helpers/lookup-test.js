@@ -1,11 +1,7 @@
 import { expect } from 'chai';
 import { describe, it } from 'mocha';
 import { setupTest } from 'ember-mocha';
-import Ember from 'ember';
-
-const {
-  Service
-} = Ember;
+import Service from '@ember/service';
 
 describe('Unit | Helper | lookup', function() {
   setupTest('helper:lookup');
