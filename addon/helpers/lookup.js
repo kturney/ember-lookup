@@ -1,11 +1,7 @@
-import Ember from 'ember';
-
-const {
-  assert,
-  getOwner,
-  Helper,
-  typeOf
-} = Ember;
+import { assert } from '@ember/debug';
+import { getOwner } from '@ember/application';
+import { typeOf } from '@ember/utils';
+import Helper from '@ember/component/helper';
 
 export default Helper.extend({
   compute([ name, type = 'service' ], hash) {
